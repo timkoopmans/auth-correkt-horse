@@ -4,7 +4,7 @@ import {useAuth} from "@frontegg/react";
 function App() {
     const {user, isAuthenticated} = useAuth();
     const logout = () => {
-        window.location.href =  `${window.location}account/logout`;
+        window.location.href = `${window.location}/account/logout`;
     }
 
     let redirectUrl = new URLSearchParams(window.location.search).get('redirectUrl');
@@ -26,12 +26,17 @@ function App() {
     }
 
     return (<div className="App">
-            {isAuthenticated && (<div>
-                    <img src={user.profilePictureUrl} alt={user.name}/>
-                    <span>{user.name}</span>
-                    <button onClick={logout}>Logout</button>
-                </div>)}
-        </div>);
+        {isAuthenticated && (<div>
+            <div>
+                <img src={user.profilePictureUrl} alt={user.name}/>
+            </div>
+            <div><span>{user.name}</span></div>
+
+            <div>
+                <button onClick={logout}>Logout</button>
+            </div>
+        </div>)}
+    </div>);
 }
 
 export default App;
