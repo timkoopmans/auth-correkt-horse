@@ -1,12 +1,8 @@
 import './App.css';
-import { useAuth } from "@frontegg/react";
+import {useAuth} from "@frontegg/react";
 
 function App() {
-    const { user, isAuthenticated } = useAuth();
-
-    // const logout = () => {
-    //     window.location.href =  `${window.location}account/logout`;
-    // }
+    const {user, isAuthenticated, logout} = useAuth();
 
     let redirectUrl = new URLSearchParams(window.location.search).get('redirectUrl');
     if (redirectUrl) {
@@ -14,31 +10,25 @@ function App() {
         localStorage.setItem('redirectUrl', redirectUrl);
     }
 
-    // This will redirect to login
-    // const user = useAuthUser();
     console.log('user', user);
     console.log('localStorage', localStorage);
 
     redirectUrl = localStorage.getItem('redirectUrl');
 
-    // if (user?.id &&  redirectUrl) {
-    if (isAuthenticated  &&  redirectUrl) {
+    if (isAuthenticated && redirectUrl) {
         localStorage.removeItem('redirectUrl');
         console.log('redirecting to', redirectUrl);
         window.location.href = redirectUrl;
         return null;
     }
 
-    return (
-        <div className="App">
-            {isAuthenticated && (
-                <div>
-                    <img src={user.profilePictureUrl} alt={user.name} />
+    return (<div className="App">
+            {isAuthenticated && (<div>
+                    <img src={user.profilePictureUrl} alt={user.name}/>
                     <span>{user.name}</span>
-                </div>
-            )}
-        </div>
-    );
+                    <button onClick={logout}>Logout</button>
+                </div>)}
+        </div>);
 }
 
 export default App;
