@@ -61,8 +61,8 @@
   font-weight: bold;
 }
 
-.logout-button {
-  background-color: #e74c3c;
+.login-button {
+  background-color: #2F6FED;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -70,7 +70,15 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
+.logout-button {
+  background-color: #2F6FED;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 .logout-button:hover {
-  background-color: #c0392b;
+  background-color: #2F6FED;
 }
