@@ -37,7 +37,7 @@ function App() {
     let loginOrigin = cookieValue;
     if (loginOrigin) {
         console.log('got loginOrigin', loginOrigin);
-        localStorage.setItem('redirectUrl', loginOrigin);
+        localStorage.setItem('redirectUrlDebug', loginOrigin);
     }
 
     console.log('user', user);
