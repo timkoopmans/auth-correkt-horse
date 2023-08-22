@@ -61,7 +61,6 @@ function App() {
             <div className="logout-section">
                 <button className="logout-button" onClick={() => logout()}>Logout</button>
             </div>
-            <p>Value of 'loginOrigin' cookie: {cookieValue}</p>
         </div>
     );
 }
