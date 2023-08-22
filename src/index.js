@@ -7,7 +7,6 @@ import { FronteggProvider } from "@frontegg/react";
 
 const contextOptions = {
     baseUrl: 'https://app-5qsu4m3928lx.frontegg.com',
-    clientId: 'e776a440-d72f-4783-932f-f0fc1be45dd6'
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
