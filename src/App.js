@@ -2,7 +2,10 @@ import './App.css';
 import {useAuth} from "@frontegg/react";
 
 function App() {
-    const {user, isAuthenticated, logout} = useAuth();
+    const {user, isAuthenticated} = useAuth();
+    const logout = () => {
+        window.location.href =  `${window.location}account/logout`;
+    }
 
     let redirectUrl = new URLSearchParams(window.location.search).get('redirectUrl');
     if (redirectUrl) {
