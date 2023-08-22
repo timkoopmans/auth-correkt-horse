@@ -1,11 +1,18 @@
 import './App.css';
 import {useAuth} from "@frontegg/react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+function LogoutRoute() {
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+    logout();
+    navigate('/');
+    return null;
+}
 
 function App() {
     const {user, isAuthenticated} = useAuth();
-    const logout = () => {
-        window.location.href =  `${window.location}account/logout`;
-    }
 
     let redirectUrl = new URLSearchParams(window.location.search).get('redirectUrl');
     if (redirectUrl) {
@@ -25,13 +32,27 @@ function App() {
         return null;
     }
 
-    return (<div className="App">
-            {isAuthenticated && (<div>
-                    <img src={user.profilePictureUrl} alt={user.name}/>
-                    <span>{user.name}</span>
-                    <button onClick={logout}>Logout</button>
-                </div>)}
-        </div>);
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/logout" element={<LogoutRoute />} />
+
+                    {/* Render your authenticated content here or other routes */}
+                </Routes>
+
+                {isAuthenticated && (
+                    <div>
+                        <img src={user.profilePictureUrl} alt={user.name} />
+                        <span>{user.name}</span>
+                        <a href="/logout">Logout</a> {/* This is the logout link */}
+                    </div>
+                )}
+
+                {/* Add other routes as needed */}
+            </div>
+        </Router>
+    );
 }
 
 export default App;
