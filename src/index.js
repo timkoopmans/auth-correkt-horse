@@ -9,11 +9,16 @@ const contextOptions = {
     baseUrl: 'https://app-5qsu4m3928lx.frontegg.com',
 };
 
+const authOptions = {
+    keepSessionAlive: true // Uncomment this in order to maintain the session alive
+};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <FronteggProvider contextOptions={contextOptions}
-                        hostedLoginBox={false}>
+                        hostedLoginBox={false}
+                        authOptions={authOptions}>
           <App />
       </FronteggProvider>,
   </React.StrictMode>
