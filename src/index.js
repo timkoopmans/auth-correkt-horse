@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { FronteggProvider } from "@frontegg/react";
 
 const contextOptions = {
-    baseUrl: 'https://app-5qsu4m3928lx.frontegg.com',
+    baseUrl: 'https://id.correkt.horse',
 };
 
 const authOptions = {
