@@ -10,7 +10,7 @@ const contextOptions = {
 };
 
 const authOptions = {
-    // keepSessionAlive: true // Uncomment this in order to maintain the session alive
+    keepSessionAlive: true
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
