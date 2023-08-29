@@ -37,7 +37,7 @@ function App() {
 
     if (user?.id && loginOrigin) {
         console.log('redirecting to', loginOrigin);
-        window.location.href = loginOrigin;
+        window.location.href = "https://" + loginOrigin;
         return null;
     }
 
