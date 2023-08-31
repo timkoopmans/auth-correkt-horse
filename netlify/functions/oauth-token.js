@@ -27,7 +27,14 @@ exports.handler = async (event, context) => {
         // if (key === "your-key-here" && secret === "your-secret-here") {
             return {
                 statusCode: 200,
-                body: JSON.stringify({ accessToken: "some-access-token" }),
+                body: JSON.stringify({
+                    accessToken: "some-access-token",
+                    token_type: "Bearer",
+                    expires_in: 3600,
+                    refresh_token: "some-refresh-token",
+                    scope: "read write",
+                    id_token: "some-id-token"
+                }),
             };
         // }
     }
