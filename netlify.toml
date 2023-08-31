@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/oauth/token"
+to = "/.netlify/functions/oauth-token"
+status = 200
