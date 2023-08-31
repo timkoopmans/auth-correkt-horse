@@ -6,22 +6,12 @@ function App() {
     const [getCookieValue, setCookieValue] = useState(null);
 
     useEffect(() => {
-        // Function to get query parameters
-        const getQueryParam = (name, url = window.location.href) => {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-            const results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        };
-
-        // Get the redirect_uri query parameter if present
-        const redirectUri = getQueryParam('redirect_uri');
+        const params = new URLSearchParams(window.location.search);
+        const redirectUri = params.get('redirect_uri');
 
         if (redirectUri) {
             // Redirect the user to the specified URI
-            // TODO: add some logic here to prevent open redirects vulnerabilities
+            // TODO: add some logic here to prevent open redirects vulnerabilities, maybe an allow list
             window.location.href = redirectUri;
             return;
         }
