@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
                 body: JSON.stringify({
                     accessToken: "some-access-token",
                     token_type: "Bearer",
-                    expires_in: 3600,
+                    expires_in: 86400,
                     refresh_token: "some-refresh-token",
                     scope: "read write",
                     id_token: "some-id-token"
