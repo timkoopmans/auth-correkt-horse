@@ -28,11 +28,12 @@ exports.handler = async (event, context) => {
             return {
                 statusCode: 200,
                 body: JSON.stringify({
-                    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImU3NzZhNDQwIn0.eyJzdWIiOiIyNzhiODZlZC1lODUzLTQ3YjQtOGQxOC0xOTc2NTE2OTMzMzMiLCJuYW1lIjoiQ29ycmVrdCBIb3JzZSIsImVtYWlsIjoiY29ycmVrdGhvcnNlQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJtZXRhZGF0YSI6e30sInJvbGVzIjpbIkFkbWluIl0sInBlcm1pc3Npb25zIjpbImZlLmNvbm5lY3Rpdml0eS4qIiwiZmUuc2VjdXJlLioiXSwidGVuYW50SWQiOiI2MjAzZTBhYy00NmNmLTQxYjItOTY2ZS1hODlmZDFkNjllN2QiLCJ0ZW5hbnRJZHMiOlsiNjIwM2UwYWMtNDZjZi00MWIyLTk2NmUtYTg5ZmQxZDY5ZTdkIl0sInByb2ZpbGVQaWN0dXJlVXJsIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUFjSFR0Y3JrNXg2SUZrSW9nam84X1h6QW9jS3ZCT3VkTXZ4cF9nOXJKY1hXS0dUOHc9czk2LWMiLCJzaWQiOiI4YjQyNDIwZS0xNTdmLTQ2NTQtYTcyYy0wZDY0NTcxOTZhMDkiLCJ0eXBlIjoidXNlclRva2VuIiwiYXVkIjoiZTc3NmE0NDAtZDcyZi00NzgzLTkzMmYtZjBmYzFiZTQ1ZGQ2IiwiaXNzIjoiaHR0cHM6Ly9pZC5jb3JyZWt0LmhvcnNlIiwiaWF0IjoxNjkzNDc2OTYzLCJleHAiOjE2OTM1NjMzNjN9.Dvr-ouUwTA9taCPVyyNnSwcDXtzj9DnUL2vV3RJdO4-I9QNAGLBXDZOX_0Jix0ZtxJcvyAC2XOnVughXN4BxC778aIYceVKsb6XR48MwrCS9rI_ObiMYfl18PPmcUZF9yn1fpq_u4D4Fi3ciDDN97oXm7BwUbYWbkuyWaDhfh-FhAm_nlEtVqGxD5L5fjxgOM_oEJgKbwgeM4TMoHrC2KEoDpvdoOR5j50mnO-UmH09C-CywGxWRc9GN91RIeY8XGqq1nxkrMkHJTv5WrSil43EilAtqGrCoekfS69p2QI040TtVOhvU62f7n1H8JNAl8hugWC7aYtRNpjYhCdVODQ",
-                    "token_type": "Bearer",
-                    "expires_in": 3600,
-                    "refresh_token": "YOUR_REFRESH_TOKEN",
-                    "scope": "read write etc"
+                    access_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.S5CmpNYneK2Uf8sg479_HpLkwxY4g9VB4tNbfavQI3Q",
+                    token_type: "Bearer",
+                    expires_in: 3600,
+                    refresh_token: "tGzv3JOkF0XG5Qx2TlKWIA",
+                    id_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.OldKP0FJ4hSPo7xEKMYwvTylAof2iRyWui5qLqG2N90"
+
                 }),
             };
         // }
