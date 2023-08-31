@@ -35,20 +35,28 @@ function App() {
 
     console.log('user', user);
 
+    // TODO: add some logic here to prevent open redirects vulnerabilities, maybe an allow list
+    const match = window.location.href.match(/redirect_uri=([^&]*)(.*)/);
+    if (match && match[1]) {
+        const redirectUri = match[1]; // The actual redirect URL
+        const extraParams = match[2]; // Extra params after redirect URL
+
+        // Decode the URI and extraParams
+        const decodedRedirectUri = decodeURIComponent(redirectUri);
+        const decodedExtraParams = decodeURIComponent(extraParams);
+
+        // Construct the final URL
+        const finalRedirectUri = `${decodedRedirectUri}${decodedExtraParams}`;
+
+        // Redirect the user to the specified URI
+        window.location.href = finalRedirectUri;
+        return;
+    }
+
     if (user?.id && loginOrigin) {
         console.log('redirecting to', loginOrigin);
         window.location.href = "https://" + loginOrigin;
         return null;
-    }
-
-    const params = new URLSearchParams(window.location.search);
-    const redirectUri = params.get('redirect_uri');
-    console.log('redirectUri', redirectUri);
-    if (redirectUri) {
-        // Redirect the user to the specified URI
-        // TODO: add some logic here to prevent open redirects vulnerabilities, maybe an allow list
-        window.location.href = redirectUri;
-        return;
     }
 
     return (
