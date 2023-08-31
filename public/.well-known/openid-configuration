@@ -1,11 +1,11 @@
 {
   "issuer": "https://auth.correkt.horse",
   "authorization_endpoint": "https://auth.correkt.horse/oauth/authorize",
-  "token_endpoint": "https://auth.correkt.horse/oauth/authorize/silent",
+  "token_endpoint": "https://auth.correkt.horse/oauth/token",
   "userinfo_endpoint": "https://auth.correkt.horse/authentity/resources/users/v2/me",
   "jwks_uri": "https://id.correkt.horse/.well-known/jwks.json",
   "scopes_supported": ["openid", "profile", "email"],
-  "response_types_supported": ["code"],
+  "response_types_supported": ["token"],
   "response_modes_supported": ["query"],
   "grant_types_supported": ["authorization_code", "refresh_token", "client_credentials"],
   "subject_types_supported": ["public"],
