@@ -6,16 +6,6 @@ function App() {
     const [getCookieValue, setCookieValue] = useState(null);
 
     useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        const redirectUri = params.get('redirect_uri');
-
-        if (redirectUri) {
-            // Redirect the user to the specified URI
-            // TODO: add some logic here to prevent open redirects vulnerabilities, maybe an allow list
-            window.location.href = redirectUri;
-            return;
-        }
-
         // On component mount, read the cookie value
         const value = getCookie("loginOrigin");
         setCookieValue(value);
@@ -49,6 +39,16 @@ function App() {
         console.log('redirecting to', loginOrigin);
         window.location.href = "https://" + loginOrigin;
         return null;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const redirectUri = params.get('redirect_uri');
+    console.log('redirectUri', redirectUri);
+    if (redirectUri) {
+        // Redirect the user to the specified URI
+        // TODO: add some logic here to prevent open redirects vulnerabilities, maybe an allow list
+        window.location.href = redirectUri;
+        return;
     }
 
     return (
