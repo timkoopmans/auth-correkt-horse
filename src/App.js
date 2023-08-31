@@ -46,7 +46,7 @@ function App() {
         const decodedExtraParams = decodeURIComponent(extraParams);
 
         // Construct the final URL
-        const finalRedirectUri = `${decodedRedirectUri}${decodedExtraParams}`;
+        const finalRedirectUri = `${decodedRedirectUri}?${decodedExtraParams.substring(1)}`;
 
         // Redirect the user to the specified URI
         window.location.href = finalRedirectUri;
