@@ -28,11 +28,15 @@ exports.handler = async (event, context) => {
             return {
                 statusCode: 200,
                 body: JSON.stringify({
-                    token_type: "Bearer",
-                    access_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImU3NzZhNDQwIn0.eyJzdWIiOiJlNjI0MGEwZS03NWRiLTRkNDMtOWNjMy1kOWQwNGZlMmEyMDUiLCJuYW1lIjoiVGltIiwiZW1haWwiOiJ0aW0ua29vcHMrdGVzdEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6bnVsbCwibWV0YWRhdGEiOnt9LCJyb2xlcyI6WyJBZG1pbiJdLCJwZXJtaXNzaW9ucyI6WyJmZS5jb25uZWN0aXZpdHkuKiIsImZlLnNlY3VyZS4qIl0sInRlbmFudElkIjoiZjA5YmY2Y2ItYjliYy00NDhjLTkyY2UtMzdmZmQwMWVlZTQ1IiwidGVuYW50SWRzIjpbImYwOWJmNmNiLWI5YmMtNDQ4Yy05MmNlLTM3ZmZkMDFlZWU0NSJdLCJwcm9maWxlUGljdHVyZVVybCI6Imh0dHBzOi8vd3d3LmdyYXZhdGFyLmNvbS9hdmF0YXIvZjc5NzVmNWM5ZmJiNDE0ZjY2MWU3YzYzYjM4NjY1ZDQ_ZD1odHRwczovL3VpLWF2YXRhcnMuY29tL2FwaS9UaW0vMTI4L3JhbmRvbSIsInNpZCI6IjkxYzM5YWI5LWI4YjUtNGVmYy05ZWI0LTQ0NjNkYzIyZjY2MSIsInR5cGUiOiJ1c2VyVG9rZW4iLCJhdWQiOiJlNzc2YTQ0MC1kNzJmLTQ3ODMtOTMyZi1mMGZjMWJlNDVkZDYiLCJpc3MiOiJodHRwczovL2lkLmNvcnJla3QuaG9yc2UiLCJpYXQiOjE2OTM0ODA0OTUsImV4cCI6MTY5MzU2Njg5NX0.J-Vpc2bDuWlAB3BsqK5b7MZ_88IbA9bm9hxtxUSKvvr6r0il74gVi2xt-dEEIjJEpEUzPL5rN_QJd2xuZAbQvPpbwxMsRKO-cfCaLbCLIUgiZdq-NHc03laH4JcJ7qRjepi0htL0ed0Mpkpk1H6gIgHzPaITJrGGLWM1SeycxDjM2ryBEF_knsU6o3pejavVxuuOfoL8M0AyX26FBpGrzwBDPoxMiXxMiBAhTO20abi9Ld-3cT_vjR8DkWKT6oerkJB0Pzl0B98OGn9mHhwZ2ySYDqLPxl9v0RcYJyoNZAAjZ0qYe5wdOgJR98NfJMK6FYS6I1wsipB_NhLo921k5w",
-                    refresh_token: "e9cbdf97-05fd-4c08-ad30-1c090b77e83c",
-                    expires_in: 86400,
-                    id_token: "e6240a0e-75db-4d43-9cc3-d9d04fe2a205"
+                    id: 3200,
+                    permalink: "jwagener",
+                    username: "Johannes Wagener",
+                    uri: "https://api.soundcloud.com/users/3207",
+                    permalink_url: "http://soundcloud.com/jwagener",
+                    avatar_url: "http://i1.sndcdn.com/avatars-000001552142-pbw8yd-large.jpg?142a848",
+                    country: "Germany",
+                    full_name: "Johannes Wagener",
+                    city: "Berlin"
                 }),
             };
         // }
