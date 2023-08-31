@@ -28,15 +28,11 @@ exports.handler = async (event, context) => {
             return {
                 statusCode: 200,
                 body: JSON.stringify({
-                    id: 3200,
-                    permalink: "jwagener",
-                    username: "Johannes Wagener",
-                    uri: "https://api.soundcloud.com/users/3207",
-                    permalink_url: "http://soundcloud.com/jwagener",
-                    avatar_url: "http://i1.sndcdn.com/avatars-000001552142-pbw8yd-large.jpg?142a848",
-                    country: "Germany",
-                    full_name: "Johannes Wagener",
-                    city: "Berlin"
+                    "access_token": "YOUR_ACCESS_TOKEN",
+                    "token_type": "Bearer",
+                    "expires_in": 3600,
+                    "refresh_token": "YOUR_REFRESH_TOKEN",
+                    "scope": "read write etc"
                 }),
             };
         // }
