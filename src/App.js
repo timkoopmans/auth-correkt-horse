@@ -2,6 +2,28 @@ import './App.css';
 import { useAuthUser } from "@frontegg/react";
 import React, { useState, useEffect } from 'react';
 
+function createRandomString(length = 16) {
+    let text = '';
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    for (let i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
+}
+
+async function generateCodeChallenge(codeVerifier) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(codeVerifier);
+    const digestBuffer = await crypto.subtle.digest('SHA-256', data);
+
+    const array = Array.from(new Uint8Array(digestBuffer));
+    const base64 = btoa(String.fromCharCode(...array));
+
+    return base64.replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+}
+
 function App() {
     const [getCookieValue, setCookieValue] = useState(null);
 
@@ -45,11 +67,19 @@ function App() {
         const decodedRedirectUri = decodeURIComponent(redirectUri);
         const decodedExtraParams = decodeURIComponent(extraParams);
 
-        // Construct the final URL
-        const finalRedirectUri = `${decodedRedirectUri}?${decodedExtraParams.substring(1)}&code=${user?.refreshToken}`;
+        const code_verifier = createRandomString();
+        generateCodeChallenge(code_verifier)
+            .then(code_challenge => {
+                // Construct the final URL
+                const finalRedirectUri = `${decodedRedirectUri}?${decodedExtraParams.substring(1)}&code=${code_challenge}`;
 
-        // Redirect the user to the specified URI
-        window.location.href = finalRedirectUri;
+                // Redirect the user to the specified URI
+                window.location.href = finalRedirectUri;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
         return;
     }
 
