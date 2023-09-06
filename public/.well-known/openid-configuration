@@ -1,7 +1,7 @@
 {
   "issuer": "https://auth.correkt.horse",
-  "authorization_endpoint": "https://7168934a212d.ngrok.app/authorize",
-  "token_endpoint": "https://7168934a212d.ngrok.app/token",
+  "authorization_endpoint": "https://7168934a212d.ngrok.app/oauth/authorize/silent",
+  "token_endpoint": "https://7168934a212d.ngrok.app/oauth/token",
   "userinfo_endpoint": "https://7168934a212d.ngrok.app/authentity/resources/users/v2/me",
   "jwks_uri": "https://id.correkt.horse/.well-known/jwks.json",
   "scopes_supported": ["openid", "profile", "email"],
