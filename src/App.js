@@ -1,5 +1,6 @@
 import './App.css';
 import { useAuthUser } from "@frontegg/react";
+import { ContextHolder } from '@frontegg/rest-api';
 import React, { useState, useEffect } from 'react';
 
 function createRandomString(length = 16) {
@@ -26,6 +27,8 @@ async function generateCodeChallenge(codeVerifier) {
 
 function App() {
     const [getCookieValue, setCookieValue] = useState(null);
+
+    console.log("base URL: " + ContextHolder.getContext().baseUrl);
 
     useEffect(() => {
         // On component mount, read the cookie value
