@@ -1,7 +1,7 @@
 {
   "issuer": "https://auth.correkt.horse",
-  "authorization_endpoint": "https://auth.correkt.horse/oauth/authorize",
-  "token_endpoint": "https://auth.correkt.horse/oauth/token",
+  "authorization_endpoint": "https://auth.correkt.horse/authorize",
+  "token_endpoint": "https://auth.correkt.horse/token",
   "userinfo_endpoint": "https://auth.correkt.horse/authentity/resources/users/v2/me",
   "jwks_uri": "https://id.correkt.horse/.well-known/jwks.json",
   "scopes_supported": ["openid", "profile", "email"],
