@@ -1,16 +1,16 @@
 {
   "issuer": "https://auth.correkt.horse",
-  "authorization_endpoint": "https://7168934a212d.ngrok.app/authorize",
-  "token_endpoint": "https://7168934a212d.ngrok.app/token",
-  "userinfo_endpoint": "https://7168934a212d.ngrok.app/authentity/resources/users/v2/me",
+  "authorization_endpoint": "https://auth.correkt.horse/authorize",
+  "token_endpoint": "https://auth.correkt.horse/oauth/token",
+  "userinfo_endpoint": "https://auth.correkt.horse/authentity/resources/users/v2/me",
   "jwks_uri": "https://id.correkt.horse/.well-known/jwks.json",
   "scopes_supported": ["openid", "profile", "email"],
-  "response_types_supported": ["code"],
-  "response_modes_supported": ["query"],
+  "response_types_supported": ["id_token", "token"],
+  "response_modes_supported": ["form_post"],
   "grant_types_supported": ["authorization_code", "refresh_token", "client_credentials"],
   "subject_types_supported": ["public"],
   "auth_token_signing_alg_values_supported": ["RS256", "ES256"],
   "token_endpoint_auth_methods_supported": ["client_secret_basic", "client_secret_post"],
   "token_endpoint_auth_signing_alg_values_supported": ["RS256", "ES256"],
-  "end_session_endpoint": "https://7168934a212d.ngrok.app/logout"
+  "end_session_endpoint": "https://auth.correkt.horse/oauth/logout"
 }

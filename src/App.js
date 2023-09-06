@@ -1,34 +1,10 @@
 import './App.css';
 import { useAuthUser } from "@frontegg/react";
-import { ContextHolder } from '@frontegg/rest-api';
 import React, { useState, useEffect } from 'react';
 
-function createRandomString(length = 16) {
-    let text = '';
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-    for (let i = 0; i < length; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-    return text;
-}
-
-async function generateCodeChallenge(codeVerifier) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(codeVerifier);
-    const digestBuffer = await crypto.subtle.digest('SHA-256', data);
-
-    const array = Array.from(new Uint8Array(digestBuffer));
-    const base64 = btoa(String.fromCharCode(...array));
-
-    return base64.replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
-}
 
 function App() {
     const [getCookieValue, setCookieValue] = useState(null);
-
-    console.log("base URL: " + ContextHolder.getContext().baseUrl);
 
     useEffect(() => {
         // On component mount, read the cookie value
@@ -66,22 +42,12 @@ function App() {
         const redirectUri = match[1]; // The actual redirect URL
         const extraParams = match[2]; // Extra params after redirect URL
 
-        // Decode the URI and extraParams
         const decodedRedirectUri = decodeURIComponent(redirectUri);
         const decodedExtraParams = decodeURIComponent(extraParams);
 
-        const code_verifier = createRandomString();
-        generateCodeChallenge(code_verifier)
-            .then(code_challenge => {
-                // Construct the final URL
-                const finalRedirectUri = `${decodedRedirectUri}?${decodedExtraParams.substring(1)}&code=${code_challenge}`;
+        const finalRedirectUri = `${decodedRedirectUri}?${decodedExtraParams.substring(1)}&id_token=${user.id}`;
 
-                // Redirect the user to the specified URI
-                window.location.href = finalRedirectUri;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        window.location.href = finalRedirectUri;
 
         return;
     }

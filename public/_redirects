@@ -1,2 +1,2 @@
-/oauth/token/alt /.netlify/functions/oauth-token 200
+/oauth/token /.netlify/functions/oauth-token 200
 /* /index.html 200
