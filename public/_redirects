@@ -1,6 +1,6 @@
 /oauth/token/alt /.netlify/functions/oauth-token 200
-/authorize /authorize 200
-/token /token 200
-/authentity/resources/users/v2/me /authentity/resources/users/v2/me 200
-/logout /logout 200
+/authorize / 200
+/token / 200
+/authentity/resources/users/v2/me / 200
+/logout / 200
 / /index.html 200
