@@ -1,7 +1,7 @@
 {
   "issuer": "https://auth.correkt.horse",
   "authorization_endpoint": "https://auth.correkt.horse/authorize",
-  "token_endpoint": "https://auth.correkt.horse/oauth/token",
+  "token_endpoint": "https://auth.correkt.horse/token",
   "userinfo_endpoint": "https://auth.correkt.horse/authentity/resources/users/v2/me",
   "jwks_uri": "https://id.correkt.horse/.well-known/jwks.json",
   "scopes_supported": ["openid", "profile", "email"],
@@ -12,5 +12,5 @@
   "auth_token_signing_alg_values_supported": ["RS256", "ES256"],
   "token_endpoint_auth_methods_supported": ["client_secret_basic", "client_secret_post"],
   "token_endpoint_auth_signing_alg_values_supported": ["RS256", "ES256"],
-  "end_session_endpoint": "https://auth.correkt.horse/oauth/logout"
+  "end_session_endpoint": "https://auth.correkt.horse/logout"
 }
